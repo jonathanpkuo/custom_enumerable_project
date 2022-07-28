@@ -9,8 +9,8 @@ end
 # to this method
 class Array
   # Define my_each here
-  def my_each(array)
-    for x in array do
+  def my_each
+    for x in self.itself do
       yield(x)
     end
   end
