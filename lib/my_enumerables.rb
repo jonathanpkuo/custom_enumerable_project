@@ -1,5 +1,22 @@
 module Enumerable
   # Your code goes here
+  def my_each_with_index
+    index = 0
+    for x in self.itself do
+      yield(x, index)
+      index += 1
+    end
+  end
+
+  def my_select
+    holding = []
+    for x in self.itself do
+      if yield(x) == true
+        holding.push(x)
+      end
+    end
+    return holding
+  end
 
 end
 
