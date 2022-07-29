@@ -39,6 +39,24 @@ module Enumerable
     return true
   end
 
+  def my_count
+    counter = 0
+    if block_given?
+      for x in self.itself do
+        if yield(x) == true
+          counter += 1
+        end
+      end
+    else
+      for x in self.itself do
+        counter += 1
+      end
+    end
+    return counter
+  end
+
+  
+
 end
 
 # You will first have to define my_each
