@@ -18,6 +18,12 @@ module Enumerable
     return holding
   end
 
+  def my_all?
+    for x in self.itself do
+      return false if yield(x) == false
+    end
+    return true
+  end
 end
 
 # You will first have to define my_each
