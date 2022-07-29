@@ -55,7 +55,13 @@ module Enumerable
     return counter
   end
 
-  
+  def my_map
+    replacement = []
+    for x in self.itself do
+      replacement.push(yield(x))
+    end
+    return replacement
+  end
 
 end
 
