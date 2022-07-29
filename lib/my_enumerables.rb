@@ -24,6 +24,13 @@ module Enumerable
     end
     return true
   end
+
+  def my_any?
+    for x in self.itself do 
+      return true if yield(x) == true
+    end
+    return false
+  end
 end
 
 # You will first have to define my_each
