@@ -63,6 +63,14 @@ module Enumerable
     return replacement
   end
 
+  def my_inject(memo = self.itself[0], &block)
+    memo = memo
+    for x in self.itself do
+      memo = yield (memo), (x)
+    end
+    return memo
+  end
+
 end
 
 # You will first have to define my_each
