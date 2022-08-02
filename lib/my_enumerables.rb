@@ -8,6 +8,7 @@ module Enumerable
     end
   end
 
+  # Returns values that pass the conditional set forth by the block
   def my_select
     holding = []
     for x in self.itself do
@@ -18,6 +19,7 @@ module Enumerable
     return holding
   end
 
+  # Returns true if and only if all values pass the conditional set forth by the block
   def my_all?
     for x in self.itself do
       return false if yield(x) == false
@@ -25,6 +27,7 @@ module Enumerable
     return true
   end
 
+  # Returns true if any values pass the coniditional set forth by the block
   def my_any?
     for x in self.itself do 
       return true if yield(x) == true
@@ -32,6 +35,7 @@ module Enumerable
     return false
   end
 
+  # Returns true if and only if any values fail the pass the conditional set forth by the block
   def my_none?
     for x in self.itself do
       return false if yield(x) == true
@@ -39,6 +43,7 @@ module Enumerable
     return true
   end
 
+  # Returns the number of values that pass the conditional set forth by the block.
   def my_count
     counter = 0
     if block_given?
